@@ -3,7 +3,7 @@
 namespace Takashato\VietQr;
 
 use Closure;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use tbQuar\Facades\Quar;
 use Takashato\VietQr\Data\AdditionalInfo;
 use Takashato\VietQr\Data\MerchantInfo;
 use Takashato\VietQr\Enums\Bank;
@@ -408,7 +408,7 @@ class VietQrCode
 
     public function generateQr(string $format = 'svg', int $size = 200)
     {
-        return QrCode::format($format)
+        return Quar::format($format)
             ->errorCorrection('h')
             ->size($size)
             ->generate($this->build());
